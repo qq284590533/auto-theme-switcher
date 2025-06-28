@@ -1,0 +1,175 @@
+{
+  "name": "auto-theme-switcher",
+  "displayName": "%displayName%",
+  "description": "%description%",
+  "version": "1.0.0",
+  "publisher": "your-publisher-name",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "auto",
+    "switcher",
+    "dark",
+    "light",
+    "schedule",
+    "system"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/auto-theme-switcher.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/auto-theme-switcher/issues"
+  },
+  "homepage": "https://github.com/your-username/auto-theme-switcher#readme",
+  "license": "MIT",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "autoTheme.toggleTheme",
+        "title": "%command.toggleTheme.title%",
+        "category": "Auto Theme",
+        "icon": "$(symbol-color)"
+      },
+      {
+        "command": "autoTheme.openSettings",
+        "title": "%command.openSettings.title%",
+        "category": "Auto Theme",
+        "icon": "$(settings-gear)"
+      },
+      {
+        "command": "autoTheme.enableAutoSwitch",
+        "title": "%command.enableAutoSwitch.title%",
+        "category": "Auto Theme",
+        "icon": "$(play)"
+      },
+      {
+        "command": "autoTheme.disableAutoSwitch",
+        "title": "%command.disableAutoSwitch.title%",
+        "category": "Auto Theme",
+        "icon": "$(stop)"
+      },
+      {
+        "command": "autoTheme.refreshSidebar",
+        "title": "%command.refreshSidebar.title%",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "autoTheme.switchToLight",
+        "title": "%command.switchToLight.title%",
+        "category": "Auto Theme",
+        "icon": "$(sun)"
+      },
+      {
+        "command": "autoTheme.switchToDark",
+        "title": "%command.switchToDark.title%",
+        "category": "Auto Theme",
+        "icon": "$(moon)"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "autoTheme",
+          "title": "%sidebar.container.title%",
+          "icon": "$(symbol-color)"
+        }
+      ]
+    },
+    "views": {
+      "autoTheme": [
+        {
+          "id": "autoThemeStatus",
+          "name": "%sidebar.status.title%",
+          "when": "true"
+        },
+        {
+          "id": "autoThemeControls",
+          "name": "%sidebar.controls.title%",
+          "type": "webview",
+          "when": "true"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "autoTheme.refreshSidebar",
+          "when": "view == autoThemeStatus",
+          "group": "navigation"
+        },
+        {
+          "command": "autoTheme.openSettings",
+          "when": "view == autoThemeControls",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "autoTheme.toggleTheme",
+          "when": "view == autoThemeControls && viewItem == toggleButton",
+          "group": "inline"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Auto Theme Switcher",
+      "properties": {
+        "autoTheme.enabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "%config.enabled.description%"
+        },
+        "autoTheme.followSystem": {
+          "type": "boolean",
+          "default": true,
+          "description": "%config.followSystem.description%"
+        },
+        "autoTheme.lightTheme": {
+          "type": "string",
+          "default": "Default Light+",
+          "description": "%config.lightTheme.description%"
+        },
+        "autoTheme.darkTheme": {
+          "type": "string",
+          "default": "Default Dark+",
+          "description": "%config.darkTheme.description%"
+        },
+        "autoTheme.scheduledSwitch": {
+          "type": "boolean",
+          "default": false,
+          "description": "%config.scheduledSwitch.description%"
+        },
+        "autoTheme.lightStartTime": {
+          "type": "string",
+          "default": "06:00",
+          "description": "%config.lightStartTime.description%"
+        },
+        "autoTheme.darkStartTime": {
+          "type": "string",
+          "default": "18:00",
+          "description": "%config.darkStartTime.description%"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "typescript": "^4.9.4"
+  }
+}

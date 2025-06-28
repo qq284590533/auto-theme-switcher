@@ -1,0 +1,44 @@
+<!-- This SVG will be converted to PNG for VS Code extension icon -->
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="themeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FF6B35;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1E3A8A;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="64" cy="64" r="60" fill="url(#themeGradient)" stroke="#333" stroke-width="2"/>
+  
+  <!-- Sun (light theme) -->
+  <g id="sun" transform="translate(40, 40)">
+    <circle cx="12" cy="12" r="8" fill="#FFD700" stroke="#FFA500" stroke-width="1"/>
+    <g stroke="#FFA500" stroke-width="2" stroke-linecap="round">
+      <line x1="12" y1="2" x2="12" y2="6"/>
+      <line x1="12" y1="18" x2="12" y2="22"/>
+      <line x1="2" y1="12" x2="6" y2="12"/>
+      <line x1="18" y1="12" x2="22" y2="12"/>
+      <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/>
+      <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/>
+      <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/>
+      <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/>
+    </g>
+  </g>
+  
+  <!-- Moon (dark theme) -->
+  <g id="moon" transform="translate(76, 76)">
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c1.19 0 2.34-.21 3.41-.6A7.5 7.5 0 0 1 7.5 14.5c0-4.14 3.36-7.5 7.5-7.5.83 0 1.63.14 2.38.4A9.96 9.96 0 0 0 12 2z" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1"/>
+  </g>
+  
+  <!-- Arrow indicating switch -->
+  <g id="arrow" transform="translate(64, 64)">
+    <path d="M-15 -5 L0 0 L-15 5 M0 0 L15 0" stroke="#FFFFFF" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+  <!-- Clock icon for scheduling -->
+  <g id="clock" transform="translate(90, 30)">
+    <circle cx="8" cy="8" r="6" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+    <polyline points="8,4 8,8 10,10" stroke="#FFFFFF" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

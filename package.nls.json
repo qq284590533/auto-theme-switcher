@@ -1,0 +1,21 @@
+{
+  "displayName": "Auto Theme Switcher",
+  "description": "Automatically switch VSCode themes with system theme following, scheduled switching, and one-click toggle",
+  "command.toggleTheme.title": "Toggle Theme",
+  "command.openSettings.title": "Open Theme Settings",
+  "command.enableAutoSwitch.title": "Enable Auto Switch",
+  "command.disableAutoSwitch.title": "Disable Auto Switch",
+  "command.switchToLight.title": "Switch to Light Theme",
+  "command.switchToDark.title": "Switch to Dark Theme",
+  "command.refreshSidebar.title": "Refresh",
+  "config.enabled.description": "Enable automatic theme switching",
+  "config.followSystem.description": "Follow system theme changes",
+  "config.lightTheme.description": "Light theme name",
+  "config.darkTheme.description": "Dark theme name",
+  "config.scheduledSwitch.description": "Enable scheduled theme switching",
+  "config.lightStartTime.description": "Light theme start time (HH:MM)",
+  "config.darkStartTime.description": "Dark theme start time (HH:MM)",
+  "sidebar.container.title": "Auto Theme Switcher",
+  "sidebar.status.title": "Theme Status",
+  "sidebar.controls.title": "Control Panel"
+}

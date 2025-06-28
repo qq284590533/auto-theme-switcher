@@ -1,0 +1,21 @@
+{
+  "displayName": "自动主题切换器",
+  "description": "自动切换VSCode主题的插件，支持系统主题跟随、定时切换和一键切换",
+  "command.toggleTheme.title": "一键切换主题",
+  "command.openSettings.title": "打开主题设置",
+  "command.enableAutoSwitch.title": "启用自动切换",
+  "command.disableAutoSwitch.title": "禁用自动切换",
+  "command.switchToLight.title": "切换到浅色主题",
+  "command.switchToDark.title": "切换到深色主题",
+  "command.refreshSidebar.title": "刷新",
+  "config.enabled.description": "启用自动主题切换",
+  "config.followSystem.description": "跟随系统主题变化",
+  "config.lightTheme.description": "浅色主题名称",
+  "config.darkTheme.description": "深色主题名称",
+  "config.scheduledSwitch.description": "启用定时主题切换",
+  "config.lightStartTime.description": "浅色主题开始时间 (HH:MM)",
+  "config.darkStartTime.description": "深色主题开始时间 (HH:MM)",
+  "sidebar.container.title": "自动主题切换器",
+  "sidebar.status.title": "主题状态",
+  "sidebar.controls.title": "控制面板"
+}

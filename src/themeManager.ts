@@ -1,5 +1,6 @@
 import * as vscode from "vscode";
 import { ConfigManager } from "./configManager";
+import { I18nManager } from "./i18n";
 
 /**
  * 主题管理器 - 负责主题的切换和管理
@@ -7,9 +8,11 @@ import { ConfigManager } from "./configManager";
 export class ThemeManager {
   private currentTheme: string = "";
   private onManualSwitchCallback?: () => void;
+  private i18nManager: I18nManager;
 
   constructor(private configManager: ConfigManager) {
     this.currentTheme = this.getCurrentTheme();
+    this.i18nManager = I18nManager.getInstance();
   }
 
   /**
@@ -53,7 +56,7 @@ export class ThemeManager {
       }
     } catch (error) {
       console.error("Failed to switch theme:", error);
-      vscode.window.showErrorMessage(`Failed to switch theme: ${error}`);
+      vscode.window.showErrorMessage(this.i18nManager.getMessage('error.switchThemeFailed', String(error)));
     }
   }
 
@@ -212,7 +215,7 @@ export class ThemeManager {
     if (targetTheme) {
       await this.setTheme(targetTheme.label, isManualSwitch);
     } else {
-      vscode.window.showErrorMessage(`Theme not found: ${themeLabel}`);
+      vscode.window.showErrorMessage(this.i18nManager.getMessage('error.themeNotFound', themeLabel));
     }
   }
 }

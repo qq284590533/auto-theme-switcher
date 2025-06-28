@@ -1,31 +1,29 @@
 # Auto Theme Switcher
 
-一个强大的VSCode插件，支持自动切换主题，让你的编辑器始终保持最佳的视觉体验。
+一个强大的 VSCode 插件，支持自动切换主题，让你的编辑器始终保持最佳的视觉体验。
+
+**中文** | [English](README.en.md)
 
 ## 功能特性
 
 ### 🎨 多种切换模式
-- **系统主题跟随**: 自动检测系统主题变化并同步切换VSCode主题
+
+- **系统主题跟随**: 自动检测系统主题变化并同步切换 VSCode 主题
 - **定时切换**: 根据设定的时间自动在浅色和深色主题间切换
 - **一键切换**: 手动快速切换主题
 
 ### ⚙️ 灵活配置
+
 - 自定义浅色和深色主题
 - 设置定时切换的时间点
 - 启用/禁用各种自动切换功能
 
 ### 🔧 易于使用
+
 - 简洁的配置界面
 - 实时状态反馈
 - 智能主题检测
 - **专用侧边栏**: 直观的状态监控和快速操作面板
-
-## 安装方法
-
-1. 打开VSCode
-2. 按 `Ctrl+Shift+X` 打开扩展面板
-3. 搜索 "Auto Theme Switcher"
-4. 点击安装
 
 ## 使用方法
 
@@ -43,7 +41,7 @@
 - **快速操作**: 通过按钮快速切换主题、启用/禁用功能
 - **状态反馈**: 所有状态变化都会实时反映在侧边栏中
 
-在VS Code活动栏中点击 "Auto Theme Switcher" 图标即可打开侧边栏。
+在 VS Code 活动栏中点击 "Auto Theme Switcher" 图标即可打开侧边栏。
 
 ### 可用命令
 
@@ -59,20 +57,20 @@
 
 ### 基本设置
 
-| 配置项 | 类型 | 默认值 | 说明 |
-|--------|------|--------|------|
-| `autoTheme.enabled` | boolean | false | 启用自动主题切换 |
-| `autoTheme.followSystem` | boolean | true | 跟随系统主题 |
-| `autoTheme.lightTheme` | string | "Default Light+" | 浅色主题名称 |
-| `autoTheme.darkTheme` | string | "Default Dark+" | 深色主题名称 |
+| 配置项                   | 类型    | 默认值           | 说明             |
+| ------------------------ | ------- | ---------------- | ---------------- |
+| `autoTheme.enabled`      | boolean | false            | 启用自动主题切换 |
+| `autoTheme.followSystem` | boolean | true             | 跟随系统主题     |
+| `autoTheme.lightTheme`   | string  | "Default Light+" | 浅色主题名称     |
+| `autoTheme.darkTheme`    | string  | "Default Dark+"  | 深色主题名称     |
 
 ### 定时切换设置
 
-| 配置项 | 类型 | 默认值 | 说明 |
-|--------|------|--------|------|
-| `autoTheme.scheduledSwitch` | boolean | false | 启用定时切换 |
-| `autoTheme.lightStartTime` | string | "06:00" | 浅色主题开始时间 (HH:MM) |
-| `autoTheme.darkStartTime` | string | "18:00" | 深色主题开始时间 (HH:MM) |
+| 配置项                      | 类型    | 默认值  | 说明                     |
+| --------------------------- | ------- | ------- | ------------------------ |
+| `autoTheme.scheduledSwitch` | boolean | false   | 启用定时切换             |
+| `autoTheme.lightStartTime`  | string  | "06:00" | 浅色主题开始时间 (HH:MM) |
+| `autoTheme.darkStartTime`   | string  | "18:00" | 深色主题开始时间 (HH:MM) |
 
 ### 配置示例
 
@@ -90,14 +88,16 @@
 
 ## 使用场景
 
-### 场景1: 跟随系统主题
-适合希望VSCode主题与系统保持一致的用户。
+### 场景 1: 跟随系统主题
+
+适合希望 VSCode 主题与系统保持一致的用户。
 
 1. 启用 `autoTheme.enabled`
 2. 启用 `autoTheme.followSystem`
 3. 设置你喜欢的浅色和深色主题
 
-### 场景2: 定时切换
+### 场景 2: 定时切换
+
 适合有固定作息时间，希望在特定时间自动切换主题的用户。
 
 1. 启用 `autoTheme.enabled`
@@ -105,7 +105,8 @@
 3. 启用 `autoTheme.scheduledSwitch`
 4. 设置切换时间点
 
-### 场景3: 手动控制
+### 场景 3: 手动控制
+
 适合希望完全手动控制主题切换的用户。
 
 1. 禁用 `autoTheme.enabled`
@@ -113,85 +114,31 @@
 
 ## 支持的主题
 
-插件支持所有已安装的VSCode主题，包括：
+插件支持所有已安装的 VSCode 主题，包括：
 
 - 内置主题（Default Light+, Default Dark+等）
-- 第三方主题（GitHub Theme, One Dark Pro等）
+- 第三方主题（GitHub Theme, One Dark Pro 等）
 - 自定义主题
 
 ## 故障排除
 
 ### 系统主题检测不工作
 
-1. 确保你使用的是Windows系统
-2. 检查VSCode是否有足够的权限访问系统设置
-3. 尝试重启VSCode
+1. 确保你使用的是 Windows 系统
+2. 检查 VSCode 是否有足够的权限访问系统设置
+3. 尝试重启 VSCode
 
 ### 定时切换不准确
 
 1. 检查系统时间是否正确
-2. 确认时间格式为 "HH:MM"（24小时制）
+2. 确认时间格式为 "HH:MM"（24 小时制）
 3. 重新启用定时切换功能
 
 ### 主题切换失败
 
 1. 确认主题名称拼写正确
 2. 检查主题是否已安装
-3. 查看VSCode输出面板的错误信息
-
-## 开发信息
-
-### 技术栈
-- TypeScript
-- VSCode Extension API
-- Node.js
-
-### 项目结构
-```
-src/
-├── extension.ts          # 插件入口文件
-├── themeManager.ts       # 主题管理器
-├── configManager.ts      # 配置管理器
-├── systemThemeDetector.ts # 系统主题检测器
-└── scheduleManager.ts    # 定时管理器
-```
-
-### 构建和开发
-
-```bash
-# 安装依赖
-npm install
-
-# 编译
-npm run compile
-
-# 监听模式
-npm run watch
-```
-
-## 更新日志
-
-### v1.0.0
-- 初始版本发布
-- 支持系统主题跟随
-- 支持定时切换
-- 支持一键切换
-- 完整的配置选项
-
-## 贡献
-
-欢迎提交Issue和Pull Request！
-
-## 许可证
-
-MIT License
-
-## 联系方式
-
-如有问题或建议，请通过以下方式联系：
-
-- GitHub Issues
-- VSCode Marketplace评论区
+3. 查看 VSCode 输出面板的错误信息
 
 ---
 

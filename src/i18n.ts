@@ -174,6 +174,8 @@ export class I18nManager {
         "Failed to execute scheduled switch: {0}",
       "error.systemThemeDetectionFailed": "System theme detection failed: {0}",
       "error.applySystemThemeFailed": "Failed to apply system theme: {0}",
+      "error.switchThemeFailed": "Failed to switch theme: {0}",
+      "error.themeNotFound": "Theme not found: {0}",
 
       // 通知消息
       "notification.switchedTo": "Switched to {0} ({1})",
@@ -332,6 +334,8 @@ export class I18nManager {
       "error.executeScheduledSwitchFailed": "执行定时切换失败: {0}",
       "error.systemThemeDetectionFailed": "检测系统主题时出错: {0}",
       "error.applySystemThemeFailed": "应用系统主题失败: {0}",
+      "error.switchThemeFailed": "切换主题失败: {0}",
+      "error.themeNotFound": "未找到主题: {0}",
 
       // 通知消息
       "notification.switchedTo": "已切换到{0}（{1}）",

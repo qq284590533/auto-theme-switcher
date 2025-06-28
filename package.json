@@ -3,7 +3,8 @@
   "displayName": "%displayName%",
   "description": "%description%",
   "version": "1.0.0",
-  "publisher": "your-publisher-name",
+  "publisher": "auto-theme-switcher",
+  "icon": "logo.png",
   "engines": {
     "vscode": "^1.74.0"
   },
@@ -21,12 +22,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/auto-theme-switcher.git"
+    "url": "https://github.com/qq284590533/auto-theme-switcher.git"
   },
   "bugs": {
-    "url": "https://github.com/your-username/auto-theme-switcher/issues"
+    "url": "https://github.com/qq284590533/auto-theme-switcher/issues"
   },
-  "homepage": "https://github.com/your-username/auto-theme-switcher#readme",
+  "homepage": "https://github.com/qq284590533/auto-theme-switcher#readme",
   "license": "MIT",
   "activationEvents": [
     "onStartupFinished"

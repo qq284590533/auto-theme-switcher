@@ -45,3 +45,5 @@ dist
 .fusebox/
 .dynamodb/
 .tern-port
+
+token.txt

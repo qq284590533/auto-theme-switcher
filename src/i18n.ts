@@ -67,13 +67,19 @@ export class I18nManager {
       "controls.openSettingsTooltip": "Open Auto Theme Switcher settings page",
       "controls.switchToLight": "Switch to Light Theme",
       "controls.switchToLightTooltip": "Switch to light theme: {theme}",
-      "controls.switchToDark": "Switch to Dark Theme",
-      "controls.switchToDarkTooltip": "Switch to dark theme: {theme}",
+      "controls.switchToDark": "Switch to dark theme",
+      "controls.switchToDarkTooltip": "Switch to dark theme: {0}",
+
+      // Status Bar
+      "statusBar.toggleTheme": "Toggle Theme",
+      "statusBar.lightTheme": "☀️ Light",
+      "statusBar.darkTheme": "🌙 Dark",
+      "statusBar.tooltip": "Click to toggle theme (Current: {0})",
 
       // 工具提示
       "tooltip.toggleTheme": "Quickly switch between light and dark themes",
-      "tooltip.autoSwitch": "Auto switch function is {0}",
-      "tooltip.followSystem": "System theme following is {0}",
+      "tooltip.autoSwitch": "Auto switch {0}",
+      "tooltip.followSystem": "Follow system theme {0}",
       "tooltip.systemTheme": "System theme detection status: {0}",
       "tooltip.scheduledSwitch": "Scheduled switch enabled, next switch: {0}",
       "tooltip.openSettings": "Open Auto Theme Switcher settings page",
@@ -233,6 +239,12 @@ export class I18nManager {
       "controls.switchToLightTooltip": "切换到浅色主题: {theme}",
       "controls.switchToDark": "切换到深色主题",
       "controls.switchToDarkTooltip": "切换到深色主题: {theme}",
+
+      // 状态栏
+      "statusBar.toggleTheme": "切换主题",
+      "statusBar.lightTheme": "☀️ 浅色",
+      "statusBar.darkTheme": "🌙 深色",
+      "statusBar.tooltip": "点击切换主题 (当前: {0})",
 
       // 工具提示
       "tooltip.toggleTheme": "在浅色和深色主题之间快速切换",

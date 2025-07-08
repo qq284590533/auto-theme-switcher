@@ -12,6 +12,7 @@ let systemThemeDetector: SystemThemeDetector;
 let scheduleManager: ScheduleManager;
 let sidebarManager: SidebarManager;
 let i18nManager: I18nManager;
+let statusBarItem: vscode.StatusBarItem;
 
 /**
  * 插件激活时调用
@@ -52,6 +53,9 @@ export function activate(context: vscode.ExtensionContext) {
   // 注册侧边栏
   sidebarManager.register(context);
 
+  // 创建状态栏项目
+  createStatusBarItem(context);
+
   // 启动自动切换功能
   initializeAutoSwitch();
 
@@ -66,6 +70,41 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 /**
+ * 创建状态栏项目
+ */
+function createStatusBarItem(context: vscode.ExtensionContext): void {
+  statusBarItem = vscode.window.createStatusBarItem(
+    vscode.StatusBarAlignment.Right,
+    100
+  );
+  statusBarItem.command = "autoTheme.toggleTheme";
+  statusBarItem.show();
+  
+  // 初始化状态栏显示
+  updateStatusBarItem();
+  
+  context.subscriptions.push(statusBarItem);
+}
+
+/**
+ * 更新状态栏项目显示
+ */
+function updateStatusBarItem(): void {
+  if (!statusBarItem) return;
+  
+  const currentTheme = vscode.workspace.getConfiguration("workbench").get("colorTheme") as string;
+  const isDark = currentTheme.toLowerCase().includes("dark");
+  
+  if (isDark) {
+    statusBarItem.text = i18nManager.getMessage("statusBar.darkTheme");
+    statusBarItem.tooltip = i18nManager.getMessage("statusBar.tooltip", i18nManager.getMessage("statusBar.darkTheme"));
+  } else {
+    statusBarItem.text = i18nManager.getMessage("statusBar.lightTheme");
+    statusBarItem.tooltip = i18nManager.getMessage("statusBar.tooltip", i18nManager.getMessage("statusBar.lightTheme"));
+  }
+}
+
+/**
  * 注册所有命令
  */
 function registerCommands(context: vscode.ExtensionContext) {
@@ -74,6 +113,7 @@ function registerCommands(context: vscode.ExtensionContext) {
     "autoTheme.toggleTheme",
     async () => {
       await themeManager.toggleTheme(true); // 明确标记为手动切换
+      updateStatusBarItem(); // 更新状态栏显示
       sidebarManager.refresh();
       vscode.window.showInformationMessage(
         i18nManager.getMessage("message.themeToggled")
@@ -156,6 +196,7 @@ function registerCommands(context: vscode.ExtensionContext) {
     "autoTheme.switchToLight",
     async () => {
       await themeManager.switchToLight(true); // 明确标记为手动切换
+      updateStatusBarItem(); // 更新状态栏显示
       sidebarManager.refresh();
       vscode.window.showInformationMessage(
         i18nManager.getMessage("message.switchedToLight")
@@ -168,6 +209,7 @@ function registerCommands(context: vscode.ExtensionContext) {
     "autoTheme.switchToDark",
     async () => {
       await themeManager.switchToDark(true); // 明确标记为手动切换
+      updateStatusBarItem(); // 更新状态栏显示
       sidebarManager.refresh();
       vscode.window.showInformationMessage(
         i18nManager.getMessage("message.switchedToDark")
@@ -230,6 +272,7 @@ async function handleManualThemeSwitch() {
 function handleConfigurationChange() {
   console.log(i18nManager.getMessage("system.configChanged"));
   initializeAutoSwitch();
+  updateStatusBarItem(); // 更新状态栏显示
   if (sidebarManager) {
     sidebarManager.refresh();
   }
